@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <title>Homepage</title>
+</head>
+<body>
+    
+<div class="wrapper">
+    <div class="sidebar">
+        <h3>PhotoShare</h3>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+            <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
+            <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+            <li><a href="#">
+              <i class="fas fa-map-pin" ></i>Upload
+            </a></li>
+
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div> 
+    <!-- end sidebar -->
+
+
+    <div class="main_content">
+        <div class="header">
+
+          <div class="welcome-msg">Welcome to PhotoShare.</div>
+          <div class="upload-sec">
+          <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+
+          <input type="file" class="form-control-file" id="fileLoader" name="imageFile" title="Load File" accept="image/*" required="required">
+      
+          <span><button type="submit" class="btn btn-primary" id="upload-btn">Upload</button></span>
+          
+        </form>
+        </div>
+
+        </div>  
+        
+      
+        <div class="info">
+          <!-- begin auth-holder -->
+          <% posts.forEach(function(post) { %>
+          <div class="auth-holder">
+            <div class="img-holder">
+             <div class="card text-center">
+              <div class="card-header">
+                 <%= post.author %>
+            </div>
+        <img class="card-img-top img-thumbnail" src="<%= post.image %>" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">
+               <i class="far fa-heart like-btn"></i>
+            </p>
+            </div>
+          </div>
+            </div>
+          </div>
+         <!--  end auth-holder -->
+         <% } %>
+        </div>
+    </div>
+    <!-- end main content -->
+</div>
+</body>
+
+</html>
+
+</body>
+</html>

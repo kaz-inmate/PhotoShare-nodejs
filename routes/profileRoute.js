@@ -1,14 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const authCheck = require('../config/auth');
 
-const authCheck = (req, res, next) => {
-    if(!req.user) {
-        res.redirect('/auth/login');
-    } else {
-        next();
-    }
-}
 
 router.get('/home', (req, res) => {
     res.render('home.ejs', {user:req.user});
